@@ -2,12 +2,14 @@ package main;
 
 import bean.Student;
 import utill.InputUtil;
+import utill.MenuUtil;
 import utill.StudentUtil;
 
 import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+
         int menu = 0;
 
         while (true){
@@ -17,24 +19,20 @@ public class Main {
                     +"\n3: find Student"
                     +"\n4: Update Student"
                     +"\n5: Exit System");
-            if(menu == 1){
-                StudentUtil.menuRegistered();
-            }else if(menu == 2){
-                StudentUtil.printAllRegisteredStudents();
-            }else if(menu == 3){
-                StudentUtil.findStudentAndPrint();
-            }else if(menu == 4){
-              StudentUtil.printAllRegisteredStudents();
+            MenuUtil.processMenu(menu);
+        }
 
-              int i = InputUtil.requiredNumber("Who is updated?");
-
-              Student newStudent = StudentUtil.fillStudent();
-
-              Config.students[i - 1] = newStudent;
-            }
-            else{
-                System.exit(0);
-            }
+        public static void requireName(){
+            InputUtil.requiredText("Enter name: ");
+        }
+        public static void requireSurname(){
+            InputUtil.requiredText("Enter surname: ");
+        }
+        public static void requireClassname(){
+            InputUtil.requiredText("Enter class name: ");
+        }
+        public static void require1Age(){
+            InputUtil.requiredNumber("Enter age: ");
         }
     }
 }
