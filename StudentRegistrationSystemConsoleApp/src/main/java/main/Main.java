@@ -21,18 +21,5 @@ public class Main {
                     +"\n5: Exit System");
             MenuUtil.processMenu(menu);
         }
-
-        public static void requireName(){
-            InputUtil.requiredText("Enter name: ");
-        }
-        public static void requireSurname(){
-            InputUtil.requiredText("Enter surname: ");
-        }
-        public static void requireClassname(){
-            InputUtil.requiredText("Enter class name: ");
-        }
-        public static void require1Age(){
-            InputUtil.requiredNumber("Enter age: ");
-        }
     }
 }
